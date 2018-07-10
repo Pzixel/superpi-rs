@@ -1,0 +1,8 @@
+[package]
+name = "superpi-rs"
+version = "0.1.0"
+authors = ["Psilon <pzixel@gmail.com>"]
+
+[dependencies]
+num-rational = "0.2"
+num-traits = "0.2"
