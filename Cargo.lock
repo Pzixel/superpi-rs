@@ -34,7 +34,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 name = "superpi-rs"
 version = "0.1.0"
 dependencies = [
- "num-bigint 0.2.0 (git+https://github.com/mancabizjak/num-bigint.git?branch=impl-sqrt)",
  "num-rational 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "num-traits 0.2.5 (registry+https://github.com/rust-lang/crates.io-index)",
 ]

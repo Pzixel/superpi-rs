@@ -6,7 +6,6 @@ authors = ["Psilon <pzixel@gmail.com>"]
 [dependencies]
 num-rational = "0.2"
 num-traits = "0.2"
-num-bigint = "0.2"
 
 [patch.crates-io]
 num-bigint = {git = "https://github.com/mancabizjak/num-bigint.git", branch = "impl-sqrt"}
