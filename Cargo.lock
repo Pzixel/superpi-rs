@@ -1,7 +1,17 @@
 [[package]]
+name = "bigdecimal"
+version = "0.0.12"
+source = "git+https://github.com/akubera/bigdecimal-rs.git?branch=develop#37a80cdcc5ede6b25e0346b83150df61df3c663a"
+dependencies = [
+ "num-bigint 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "num-integer 0.1.39 (registry+https://github.com/rust-lang/crates.io-index)",
+ "num-traits 0.2.5 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
 name = "num-bigint"
 version = "0.2.0"
-source = "git+https://github.com/mancabizjak/num-bigint.git?branch=impl-sqrt#d0de99199da3e0fa3a9823eaab22d69b555d299b"
+source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "num-integer 0.1.39 (registry+https://github.com/rust-lang/crates.io-index)",
  "num-traits 0.2.5 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -16,16 +26,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "num-rational"
-version = "0.2.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-dependencies = [
- "num-bigint 0.2.0 (git+https://github.com/mancabizjak/num-bigint.git?branch=impl-sqrt)",
- "num-integer 0.1.39 (registry+https://github.com/rust-lang/crates.io-index)",
- "num-traits 0.2.5 (registry+https://github.com/rust-lang/crates.io-index)",
-]
-
-[[package]]
 name = "num-traits"
 version = "0.2.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -34,12 +34,11 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 name = "superpi-rs"
 version = "0.1.0"
 dependencies = [
- "num-rational 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "num-traits 0.2.5 (registry+https://github.com/rust-lang/crates.io-index)",
+ "bigdecimal 0.0.12 (git+https://github.com/akubera/bigdecimal-rs.git?branch=develop)",
 ]
 
 [metadata]
-"checksum num-bigint 0.2.0 (git+https://github.com/mancabizjak/num-bigint.git?branch=impl-sqrt)" = "<none>"
+"checksum bigdecimal 0.0.12 (git+https://github.com/akubera/bigdecimal-rs.git?branch=develop)" = "<none>"
+"checksum num-bigint 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "3eceac7784c5dc97c2d6edf30259b4e153e6e2b42b3c85e9a6e9f45d06caef6e"
 "checksum num-integer 0.1.39 (registry+https://github.com/rust-lang/crates.io-index)" = "e83d528d2677f0518c570baf2b7abdcf0cd2d248860b68507bdcb3e91d4c0cea"
-"checksum num-rational 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)" = "4e96f040177bb3da242b5b1ecf3f54b5d5af3efbbfb18608977a5d2767b22f10"
 "checksum num-traits 0.2.5 (registry+https://github.com/rust-lang/crates.io-index)" = "630de1ef5cc79d0cdd78b7e33b81f083cbfe90de0f4b2b2f07f905867c70e9fe"

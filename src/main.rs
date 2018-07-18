@@ -1,30 +1,31 @@
-extern crate num_rational;
-extern crate num_traits;
+#![deny(clippy)]
+#![allow(many_single_char_names)]
 
-use num_rational::BigRational;
+extern crate bigdecimal;
+
+use bigdecimal::BigDecimal;
 use std::time::Instant;
 
 fn main() {
     let n: u32 = std::env::args()
-        .skip(1)
-        .next()
+        .nth(1)
         .expect("provide numbers of iterations")
         .parse()
         .unwrap();
 
-    let mut a = BigRational::from_integer(1_u64.into());
-    let mut b = BigRational::new(470_832_u64.into(), 665_857_u64.into());
-    let mut t = BigRational::new(1_u64.into(), 4_u64.into());
-    let mut p = BigRational::from_integer(1_u64.into());
+    let mut a = BigDecimal::from(1_u64);
+    let mut b = BigDecimal::from(std::f64::consts::FRAC_1_SQRT_2);
+    let mut t = BigDecimal::from(1.0/4.0);
+    let mut p = BigDecimal::from(1_u64);
 
     let now = Instant::now();
-    let half = BigRational::new(1_u64.into(), 2_u64.into());
-    let two = BigRational::new(2_u64.into(), 1_u64.into());
+    let half = BigDecimal::from(1.0/2.0);
+    let two = BigDecimal::from(2_u64);
 
     for _ in 0..n {
         let new_a = (&a + &b) * &half;
         let new_b_square = &a * b;
-        let new_b = BigRational::new(new_b_square.numer().sqrt(), new_b_square.denom().sqrt());
+        let new_b = new_b_square.sqrt().unwrap();
         let a_diff = a - &new_a;
         let new_t = t - &p * &a_diff * a_diff;
         let new_p = &two * p;
@@ -36,7 +37,7 @@ fn main() {
     }
 
     let a_plus_b = a + b;
-    let result = &a_plus_b * &a_plus_b / (BigRational::from_integer(4_u64.into()) * t);
+    let result = &a_plus_b * &a_plus_b / (BigDecimal::from(4_u64) * t);
     println!(
         "Result: {}\nElapsed time: {}s {}ms.",
         result,
