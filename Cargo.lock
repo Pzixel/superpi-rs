@@ -1,7 +1,7 @@
 [[package]]
 name = "bigdecimal"
 version = "0.0.12"
-source = "git+https://github.com/akubera/bigdecimal-rs.git?branch=develop#37a80cdcc5ede6b25e0346b83150df61df3c663a"
+source = "git+https://github.com/akubera/bigdecimal-rs.git?branch=develop#24f4f2dfc50d20a12aed63b5b4e764baa002c32f"
 dependencies = [
  "num-bigint 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "num-integer 0.1.39 (registry+https://github.com/rust-lang/crates.io-index)",

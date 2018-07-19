@@ -14,8 +14,8 @@ fn main() {
         .unwrap();
 
     let mut a = BigDecimal::from(1_u64);
-    let mut b = BigDecimal::from(std::f64::consts::FRAC_1_SQRT_2);
-    let mut t = BigDecimal::from(1.0/4.0);
+    let mut b = BigDecimal::from(0.5).sqrt().unwrap();
+    let mut t = BigDecimal::from(0.25);
     let mut p = BigDecimal::from(1_u64);
 
     let now = Instant::now();
